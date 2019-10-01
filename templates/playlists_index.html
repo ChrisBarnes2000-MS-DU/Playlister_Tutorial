@@ -5,11 +5,18 @@
     <h1>Playlists</h1>
 
     <a href='/playlists/new'>New Playlist</a>
-    
-    {% for playlist in playlists %}
-        <h2><a href='/playlists/{{ playlist._id }}'>{{ playlist.title }}</a></h2>
-        <small>{{ playlist.description }}</small>
-        <br><small>{{ playlist.videos }}</small>
-        <small>{{ playlist.ratings }}</small>
-    {% endfor %}
+    <div class='row'>
+        {% for playlist in playlists %}
+        <div class='col-md-3'>
+            <div class="card">
+                <div class="card-body">
+                    <h2><a href='/playlists/{{ playlist._id }}'>{{ playlist.title }}</a></h2>
+                    <small>{{ playlist.description }}</small>
+                    <br><small>{{ playlist.videos }}</small>
+                    <small>{{ playlist.ratings }}</small>
+                </div> <!-- end card body -->
+            </div> <!-- end card -->
+        </div> <!-- end col -->
+        {% endfor %}
+    </div>
 {% endblock %}
