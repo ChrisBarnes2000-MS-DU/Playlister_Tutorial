@@ -10,7 +10,6 @@ db = client.get_default_database()
 playlists = db.playlists
 comments = db.comments
 
-
 app = Flask(__name__)
 
 # INDEX
