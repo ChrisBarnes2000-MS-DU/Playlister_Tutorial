@@ -16,6 +16,11 @@
         </div>
         {% endfor %}
         <button class='btn btn-primary'><a style="color:white" href='/playlists/{{ playlist._id }}/edit'>Edit</a></button>
+        <div class="form-group">
+            <form method='POST' action='/playlists/{{ playlist._id }}/delete'>
+                <button type='submit'>Delete</button>
+            </form>
+        </div>
         <hr>
         <!-- Comment form -->
         {% include 'partials/comment_form.html' %}
