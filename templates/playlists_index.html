@@ -14,6 +14,11 @@
                     <small>{{ playlist.description }}</small>
                     <br><small>{{ playlist.videos }}</small>
                     <small>{{ playlist.ratings }}</small>
+                    <div class="form-group">
+                        <form method='POST' action='/playlists/{{ playlist._id }}/delete'>
+                            <button type='submit'>Delete</button>
+                        </form>
+                    </div>
                 </div> <!-- end card body -->
             </div> <!-- end card -->
         </div> <!-- end col -->
