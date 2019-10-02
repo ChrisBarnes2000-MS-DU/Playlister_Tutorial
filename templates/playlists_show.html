@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href='/'>Back to Home</a>
+<button><a href='/'>Back to Home</a></button>
 <div class='row'>
     <div class='col-sm-6 col-sm-offset-3'>
         <h1>{{ playlist.title }}</h1>
@@ -15,7 +15,7 @@
             </div>
         </div>
         {% endfor %}
-        <button class='btn btn-primary'><a href='/playlists/{{ playlist._id }}/edit'>Edit</a></button>
+        <button class='btn btn-primary'><a style="color:white" href='/playlists/{{ playlist._id }}/edit'>Edit</a></button>
         <hr>
         <!-- Comment form -->
         {% include 'partials/comment_form.html' %}
