@@ -19,12 +19,10 @@
             </div>
         </div>
         {% endfor %}
-        <div class="form-group">
-            <button class='btn btn-primary'><a style="color:white" href='/playlists/{{ playlist._id }}/edit'>Edit</a></button>
-            <form method='POST' action='/playlists/{{ playlist._id }}/delete'>
-                <button type='submit'>Delete</button>
-            </form>
-        </div>
+        <button class='btn btn-primary'><a href='/playlists/{{ playlist._id }}/edit'>Edit</a></button>
+        <form method='POST' action='/playlists/{{ playlist._id }}/delete'>
+            <button type='submit'>Delete</button>
+        </form>
         <hr>
         <!-- Comment form -->
         {% include 'partials/comment_form.html' %}
