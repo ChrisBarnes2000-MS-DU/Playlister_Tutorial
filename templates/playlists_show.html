@@ -20,7 +20,7 @@
         </div>
         {% endfor %}
         <div class="form-group">
-            <button class='btn btn-primary'><a href='/playlists/{{ playlist._id }}/edit'>Edit</a></button>
+            <button class='btn btn-primary'><a style="color: white" href='/playlists/{{ playlist._id }}/edit'>Edit</a></button>
             
             <form method='POST' action='/playlists/{{ playlist._id }}/delete'>
                 <button type='submit'>Delete</button>
