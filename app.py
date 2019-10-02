@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+from datetime import datetime
 import os
 
 host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Playlister')
@@ -33,8 +34,10 @@ def playlists_submit():
         'title': request.form.get('title'),
         'description': request.form.get('description'),
         'videos': request.form.get('videos').split(),
+        'created_at': datetime.now(),
         'ratings': request.form.get('ratings')
     }
+    print(playlist)
     playlist_id = playlists.insert_one(playlist).inserted_id
     return redirect(url_for('playlists_show', playlist_id=playlist_id))
 
@@ -93,6 +96,6 @@ def comments_delete(comment_id):
     comment = comments.find_one({'_id': ObjectId(comment_id)})
     comments.delete_one({'_id': ObjectId(comment_id)})
     return redirect(url_for('playlists_show', playlist_id=comment.get('playlist_id')))
-    
+
 if __name__ == '__main__':
   app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
